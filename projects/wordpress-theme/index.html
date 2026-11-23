@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crumb — custom WordPress theme — Case study · David Constantin</title>
+<meta name="description" content="Case study: A classic WordPress theme written from scratch in PHP: template hierarchy, menus, custom logo, widgets and escaped output. Downloadable as a zip.">
+<meta name="author" content="George David Constantin">
+<link rel="canonical" href="https://davidgeorgeconstantin-spec.github.io/projects/wordpress-theme/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="David Constantin — Web Developer">
+<meta property="og:title" content="Crumb — custom WordPress theme — Case study · David Constantin">
+<meta property="og:description" content="Case study: A classic WordPress theme written from scratch in PHP: template hierarchy, menus, custom logo, widgets and escaped output. Downloadable as a zip.">
+<meta property="og:url" content="https://davidgeorgeconstantin-spec.github.io/projects/wordpress-theme/">
+<meta property="og:image" content="https://davidgeorgeconstantin-spec.github.io/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0d17">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<script>try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="/" class="logo"><span class="logo-mark" aria-hidden="true">DC</span><span>David Constantin</span></a>
+    <nav id="menu" class="menu" aria-label="Main"><a href="/#projects">Projects</a><a href="/#skills">Skills</a><a href="/#services">Services</a><a href="/#about">About</a><a href="/#contact">Contact</a><a href="/cv/George_David_Constantin_CV_EN_v2.pdf" download>CV (PDF)</a></nav>
+    <div class="nav-tools">
+      <button class="icon-btn theme-toggle" type="button" aria-pressed="false" aria-label="Switch to light theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="moon"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+  <section class="cs-hero">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/#projects">Projects</a> / <span aria-current="page">Crumb</span></nav>
+    <p class="demo-flag">Demo concept for a fictional business. Not real client work.</p>
+    <h1>Crumb — custom WordPress theme</h1>
+    <p class="lead">A classic WordPress theme written from scratch in PHP: template hierarchy, menus, custom logo, widgets and escaped output. Downloadable as a zip.</p>
+    <div class="cta"><a class="btn btn-accent" href="/wordpress-theme/crumb.zip" download>Download the theme (zip)</a><a class="btn btn-ghost" href="/demos/wp-theme/">View static preview</a></div>
+    <dl class="meta">
+      <div><dt>Business</dt><dd>Crumb &amp; Co., a fictional neighbourhood bakery</dd></div>
+      <div><dt>Type</dt><dd>WordPress theme</dd></div>
+      <div><dt>My role</dt><dd>Design &amp; code</dd></div>
+      <div><dt>Tech</dt><dd>WordPress, PHP, HTML, CSS</dd></div>
+    </dl>
+  </section>
+  <div class="shots">
+    <figure class="shot"><img src="/assets/img/thumb-wptheme.jpg" alt="Desktop screenshot of the Crumb demo" width="1200" height="750"><figcaption>Desktop</figcaption></figure>
+    <figure class="shot"><img src="/assets/img/mobile-wptheme.jpg" alt="Mobile screenshot of the Crumb demo" width="390" height="780" loading="lazy" decoding="async"><figcaption>Mobile</figcaption></figure>
+  </div>
+  <article class="prose">
+    <h2>The problem</h2><p>Most small businesses run on WordPress, and many job ads ask for someone who can build or edit a theme, not just install one. A heavy page-builder theme is slow and hard to maintain for a simple bakery site.</p>
+    <h2>The solution</h2><p>I wrote a lightweight classic theme by hand, using WordPress's own functions the way the official Theme Handbook recommends. The owner edits pages, posts, the menu and the logo from the normal WordPress dashboard; no page builder, no jQuery.</p>
+    <h2>Key features</h2><ul><li>Standard template files: <code>style.css</code> header, <code>functions.php</code>, <code>header.php</code>, <code>footer.php</code>, <code>index.php</code>, <code>page.php</code>, <code>single.php</code></li><li>Theme supports: title tag, featured images, custom logo, HTML5 markup, responsive embeds, wide alignment</li><li>Two menu locations (primary and footer) plus a footer widget area for opening hours and address</li><li>Accessibility: skip link, <code>aria-label</code> on navigation, keyboard-friendly mobile menu with <code>aria-expanded</code>, visible focus styles</li><li>Security: every output escaped with <code>esc_html()</code>, <code>esc_attr()</code>, <code>esc_url()</code> or <code>wp_kses_post()</code>; no direct file access</li><li>Translation-ready (<code>crumb</code> text domain) and a tiny inline script loaded in the footer</li></ul>
+    <h2>Quality checks</h2>
+    <ul><li>Responsive from 320px phones to wide desktop screens</li><li>Keyboard navigation and visible focus states</li><li>Labelled form fields and readable colour contrast</li><li>No frameworks: plain HTML, CSS and JavaScript, plus PHP</li></ul>
+    <h2>Source code</h2><p>The real files, shown exactly as they are in the project.</p><div class="code-block"><div class="code-head"><span>functions.php</span><button class="copy" type="button">Copy</button></div><pre tabindex="0" aria-label="Source code of functions.php"><code>&lt;?php
+/**
+ * Crumb theme functions.
+ *
+ * @package Crumb
+ */
+
+if ( ! defined( &#x27;ABSPATH&#x27; ) ) {
+	exit; // No direct access.
+}
+
+define( &#x27;CRUMB_VERSION&#x27;, &#x27;1.0.0&#x27; );
+
+/**
+ * Theme setup: features, menus, translations.
+ */
+function crumb_setup() {
+	load_theme_textdomain( &#x27;crumb&#x27;, get_template_directory() . &#x27;/languages&#x27; );
+
+	add_theme_support( &#x27;title-tag&#x27; );
+	add_theme_support( &#x27;post-thumbnails&#x27; );
+	add_theme_support( &#x27;automatic-feed-links&#x27; );
+	add_theme_support( &#x27;responsive-embeds&#x27; );
+	add_theme_support( &#x27;align-wide&#x27; );
+	add_theme_support( &#x27;wp-block-styles&#x27; );
+	add_theme_support( &#x27;html5&#x27;, array( &#x27;search-form&#x27;, &#x27;comment-form&#x27;, &#x27;comment-list&#x27;, &#x27;gallery&#x27;, &#x27;caption&#x27;, &#x27;style&#x27;, &#x27;script&#x27;, &#x27;navigation-widgets&#x27; ) );
+	add_theme_support(
+		&#x27;custom-logo&#x27;,
+		array(
+			&#x27;height&#x27;      =&gt; 80,
+			&#x27;width&#x27;       =&gt; 240,
+			&#x27;flex-height&#x27; =&gt; true,
+			&#x27;flex-width&#x27;  =&gt; true,
+		)
+	);
+
+	register_nav_menus(
+		array(
+			&#x27;primary&#x27; =&gt; __( &#x27;Primary menu&#x27;, &#x27;crumb&#x27; ),
+			&#x27;footer&#x27;  =&gt; __( &#x27;Footer menu&#x27;, &#x27;crumb&#x27; ),
+		)
+	);
+
+	add_image_size( &#x27;crumb-card&#x27;, 720, 450, true );
+}
+add_action( &#x27;after_setup_theme&#x27;, &#x27;crumb_setup&#x27; );
+
+/**
+ * Content width for embeds and images.
+ */
+function crumb_content_width() {
+	$GLOBALS[&#x27;content_width&#x27;] = 760;
+}
+add_action( &#x27;after_setup_theme&#x27;, &#x27;crumb_content_width&#x27;, 0 );
+
+/**
+ * Footer widget area.
+ */
+function crumb_widgets_init() {
+	register_sidebar(
+		array(
+			&#x27;name&#x27;          =&gt; __( &#x27;Footer&#x27;, &#x27;crumb&#x27; ),
+			&#x27;id&#x27;            =&gt; &#x27;footer-1&#x27;,
+			&#x27;description&#x27;   =&gt; __( &#x27;Widgets shown in the footer (opening hours, address, etc.).&#x27;, &#x27;crumb&#x27; ),
+			&#x27;before_widget&#x27; =&gt; &#x27;&lt;section id=&quot;%1$s&quot; class=&quot;widget %2$s&quot;&gt;&#x27;,
+			&#x27;after_widget&#x27;  =&gt; &#x27;&lt;/section&gt;&#x27;,
+			&#x27;before_title&#x27;  =&gt; &#x27;&lt;h2 class=&quot;widget-title&quot;&gt;&#x27;,
+			&#x27;after_title&#x27;   =&gt; &#x27;&lt;/h2&gt;&#x27;,
+		)
+	);
+}
+add_action( &#x27;widgets_init&#x27;, &#x27;crumb_widgets_init&#x27; );
+
+/**
+ * Styles and scripts. The menu script is tiny and loaded in the footer.
+ */
+function crumb_assets() {
+	wp_enqueue_style( &#x27;crumb-style&#x27;, get_stylesheet_uri(), array(), CRUMB_VERSION );
+
+	wp_register_script( &#x27;crumb-navigation&#x27;, &#x27;&#x27;, array(), CRUMB_VERSION, true );
+	wp_enqueue_script( &#x27;crumb-navigation&#x27; );
+	wp_add_inline_script(
+		&#x27;crumb-navigation&#x27;,
+		&quot;(function(){var n=document.getElementById(&#x27;site-navigation&#x27;);if(!n)return;var b=n.querySelector(&#x27;.menu-toggle&#x27;);if(!b)return;b.addEventListener(&#x27;click&#x27;,function(){var o=n.classList.toggle(&#x27;toggled&#x27;);b.setAttribute(&#x27;aria-expanded&#x27;,o?&#x27;true&#x27;:&#x27;false&#x27;);});})();&quot;
+	);
+
+	if ( is_singular() &amp;&amp; comments_open() &amp;&amp; get_option( &#x27;thread_comments&#x27; ) ) {
+		wp_enqueue_script( &#x27;comment-reply&#x27; );
+	}
+}
+add_action( &#x27;wp_enqueue_scripts&#x27;, &#x27;crumb_assets&#x27; );
+
+/**
+ * Shorter, cleaner excerpts on archive pages.
+ *
+ * @param int $length Default length.
+ * @return int
+ */
+function crumb_excerpt_length( $length ) {
+	return is_admin() ? $length : 28;
+}
+add_filter( &#x27;excerpt_length&#x27;, &#x27;crumb_excerpt_length&#x27; );
+
+/**
+ * Prints the post date and author, escaped.
+ */
+function crumb_posted_on() {
+	printf(
+		/* translators: 1: post date, 2: author name. */
+		esc_html__( &#x27;Posted on %1$s by %2$s&#x27;, &#x27;crumb&#x27; ),
+		&#x27;&lt;time datetime=&quot;&#x27; . esc_attr( get_the_date( DATE_W3C ) ) . &#x27;&quot;&gt;&#x27; . esc_html( get_the_date() ) . &#x27;&lt;/time&gt;&#x27;,
+		esc_html( get_the_author() )
+	);
+}
+</code></pre></div><div class="code-block"><div class="code-head"><span>header.php</span><button class="copy" type="button">Copy</button></div><pre tabindex="0" aria-label="Source code of header.php"><code>&lt;?php
+/**
+ * Site header.
+ *
+ * @package Crumb
+ */
+?&gt;
+&lt;!doctype html&gt;
+&lt;html &lt;?php language_attributes(); ?&gt;&gt;
+&lt;head&gt;
+	&lt;meta charset=&quot;&lt;?php bloginfo( &#x27;charset&#x27; ); ?&gt;&quot;&gt;
+	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+	&lt;?php wp_head(); ?&gt;
+&lt;/head&gt;
+&lt;body &lt;?php body_class(); ?&gt;&gt;
+&lt;?php wp_body_open(); ?&gt;
+&lt;a class=&quot;skip-link&quot; href=&quot;#primary&quot;&gt;&lt;?php esc_html_e( &#x27;Skip to content&#x27;, &#x27;crumb&#x27; ); ?&gt;&lt;/a&gt;
+
+&lt;header class=&quot;site-header&quot;&gt;
+	&lt;div class=&quot;container&quot;&gt;
+		&lt;div class=&quot;site-branding&quot;&gt;
+			&lt;?php if ( has_custom_logo() ) : ?&gt;
+				&lt;?php the_custom_logo(); ?&gt;
+			&lt;?php else : ?&gt;
+				&lt;p class=&quot;site-title&quot;&gt;&lt;a href=&quot;&lt;?php echo esc_url( home_url( &#x27;/&#x27; ) ); ?&gt;&quot; rel=&quot;home&quot;&gt;&lt;?php bloginfo( &#x27;name&#x27; ); ?&gt;&lt;/a&gt;&lt;/p&gt;
+			&lt;?php endif; ?&gt;
+			&lt;?php $crumb_description = get_bloginfo( &#x27;description&#x27;, &#x27;display&#x27; ); ?&gt;
+			&lt;?php if ( $crumb_description ) : ?&gt;
+				&lt;p class=&quot;site-description&quot;&gt;&lt;?php echo esc_html( $crumb_description ); ?&gt;&lt;/p&gt;
+			&lt;?php endif; ?&gt;
+		&lt;/div&gt;
+
+		&lt;nav id=&quot;site-navigation&quot; class=&quot;main-navigation&quot; aria-label=&quot;&lt;?php esc_attr_e( &#x27;Primary&#x27;, &#x27;crumb&#x27; ); ?&gt;&quot;&gt;
+			&lt;button class=&quot;menu-toggle&quot; aria-controls=&quot;primary-menu&quot; aria-expanded=&quot;false&quot;&gt;&lt;?php esc_html_e( &#x27;Menu&#x27;, &#x27;crumb&#x27; ); ?&gt;&lt;/button&gt;
+			&lt;?php
+			wp_nav_menu(
+				array(
+					&#x27;theme_location&#x27; =&gt; &#x27;primary&#x27;,
+					&#x27;menu_id&#x27;        =&gt; &#x27;primary-menu&#x27;,
+					&#x27;container&#x27;      =&gt; false,
+					&#x27;fallback_cb&#x27;    =&gt; &#x27;wp_page_menu&#x27;,
+					&#x27;depth&#x27;          =&gt; 2,
+				)
+			);
+			?&gt;
+		&lt;/nav&gt;
+	&lt;/div&gt;
+&lt;/header&gt;
+</code></pre></div><div class="code-block"><div class="code-head"><span>single.php</span><button class="copy" type="button">Copy</button></div><pre tabindex="0" aria-label="Source code of single.php"><code>&lt;?php
+/**
+ * Template for a single blog post.
+ *
+ * @package Crumb
+ */
+
+get_header();
+?&gt;
+&lt;main id=&quot;primary&quot; class=&quot;site-main&quot;&gt;
+	&lt;div class=&quot;container&quot;&gt;
+		&lt;?php
+		while ( have_posts() ) :
+			the_post();
+			?&gt;
+			&lt;article id=&quot;post-&lt;?php the_ID(); ?&gt;&quot; &lt;?php post_class( &#x27;entry&#x27; ); ?&gt;&gt;
+				&lt;header&gt;
+					&lt;h1 class=&quot;entry-title&quot;&gt;&lt;?php the_title(); ?&gt;&lt;/h1&gt;
+					&lt;p class=&quot;entry-meta&quot;&gt;&lt;?php crumb_posted_on(); ?&gt;&lt;/p&gt;
+				&lt;/header&gt;
+				&lt;?php if ( has_post_thumbnail() ) : ?&gt;
+					&lt;div class=&quot;post-thumbnail&quot;&gt;&lt;?php the_post_thumbnail( &#x27;large&#x27; ); ?&gt;&lt;/div&gt;
+				&lt;?php endif; ?&gt;
+				&lt;div class=&quot;entry-content&quot;&gt;
+					&lt;?php the_content(); ?&gt;
+				&lt;/div&gt;
+				&lt;footer class=&quot;entry-meta&quot;&gt;
+					&lt;?php
+					$crumb_categories = get_the_category_list( esc_html__( &#x27;, &#x27;, &#x27;crumb&#x27; ) );
+					if ( $crumb_categories ) {
+						/* translators: %s: list of categories. */
+						printf( &#x27;&lt;p&gt;&#x27; . esc_html__( &#x27;Filed under: %s&#x27;, &#x27;crumb&#x27; ) . &#x27;&lt;/p&gt;&#x27;, wp_kses_post( $crumb_categories ) );
+					}
+					?&gt;
+				&lt;/footer&gt;
+			&lt;/article&gt;
+
+			&lt;?php
+			the_post_navigation(
+				array(
+					&#x27;prev_text&#x27; =&gt; &#x27;&amp;larr; %title&#x27;,
+					&#x27;next_text&#x27; =&gt; &#x27;%title &amp;rarr;&#x27;,
+				)
+			);
+
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+		endwhile;
+		?&gt;
+	&lt;/div&gt;
+&lt;/main&gt;
+&lt;?php
+get_footer();
+</code></pre></div>
+  </article>
+  <nav class="cs-nav" aria-label="More projects">
+    <a class="link" href="/projects/launch/">&larr; Taskly</a>
+    <a class="link" href="/projects/php-booking/">Pedal &amp; Co. &rarr;</a>
+  </nav>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <span>&copy; <span id="y">2026</span> George David Constantin &middot; Hand-coded with HTML, CSS &amp; JavaScript</span>
+    <span><a href="mailto:davidgeorgeconstantin@gmail.com">Email</a> &middot; <a href="https://github.com/davidgeorgeconstantin-spec" rel="noopener">GitHub</a> &middot; <a href="#main">Back to top &uarr;</a></span>
+  </div>
+</footer>
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>
