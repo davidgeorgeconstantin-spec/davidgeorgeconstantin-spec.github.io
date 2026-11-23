@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>David Constantin — Junior Web Developer (WordPress, HTML, CSS, JavaScript, PHP)</title>
+<meta name="description" content="Portfolio of George David Constantin, junior web developer from Romania. Responsive, accessible websites and WordPress themes with HTML, CSS, JavaScript and PHP. Open to remote roles.">
+<meta name="author" content="George David Constantin">
+<link rel="canonical" href="https://davidgeorgeconstantin-spec.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="David Constantin — Web Developer">
+<meta property="og:title" content="David Constantin — Junior Web Developer (WordPress, HTML, CSS, JavaScript, PHP)">
+<meta property="og:description" content="Portfolio of George David Constantin, junior web developer from Romania. Responsive, accessible websites and WordPress themes with HTML, CSS, JavaScript and PHP. Open to remote roles.">
+<meta property="og:url" content="https://davidgeorgeconstantin-spec.github.io/">
+<meta property="og:image" content="https://davidgeorgeconstantin-spec.github.io/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0d17">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<script>try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="/" class="logo"><span class="logo-mark" aria-hidden="true">DC</span><span>David Constantin</span></a>
+    <nav id="menu" class="menu" aria-label="Main"><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a><a href="/cv/George_David_Constantin_CV_EN_v2.pdf" download>CV (PDF)</a></nav>
+    <div class="nav-tools">
+      <button class="icon-btn theme-toggle" type="button" aria-pressed="false" aria-label="Switch to light theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="moon"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="pill"><span class="dot" aria-hidden="true"></span> Open to remote junior roles &amp; freelance work</p>
+      <h1>I build <span class="grad">fast, accessible</span> websites with WordPress &amp; clean code.</h1>
+      <p class="lead">Hi, I&rsquo;m David, a junior web developer from Romania. I hand-code responsive sites in HTML, CSS and JavaScript, build WordPress themes in PHP, and test every page on phone and desktop screen sizes.</p>
+      <div class="cta">
+        <a href="#projects" class="btn btn-accent">See my projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+        <a href="/cv/George_David_Constantin_CV_EN_v2.pdf" class="btn btn-ghost" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg> Download CV</a>
+      </div>
+      <ul class="chips" aria-label="Core skills"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>WordPress</li><li>PHP</li><li>Responsive</li><li>Accessibility</li></ul>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="window">
+        <div class="window-bar"><i></i><i></i><i></i><span>header.php</span></div>
+<pre><span class="tk-c">&lt;!-- Crumb theme, written by hand --&gt;</span>
+<span class="tk-t">&lt;a</span> <span class="tk-a">class</span>=<span class="tk-s">"skip-link"</span> <span class="tk-a">href</span>=<span class="tk-s">"#primary"</span><span class="tk-t">&gt;</span>
+  &lt;?php <span class="tk-f">esc_html_e</span>( <span class="tk-s">'Skip to content'</span> ); ?&gt;
+<span class="tk-t">&lt;/a&gt;</span>
+<span class="tk-t">&lt;nav</span> <span class="tk-a">aria-label</span>=<span class="tk-s">"Primary"</span><span class="tk-t">&gt;</span>
+  &lt;?php <span class="tk-f">wp_nav_menu</span>( [
+    <span class="tk-s">'theme_location'</span> =&gt; <span class="tk-s">'primary'</span>,
+  ] ); ?&gt;
+<span class="tk-t">&lt;/nav&gt;</span></pre>
+      </div>
+      <div class="float-card"><span class="ring">6</span><div><b>6 demo projects</b>Case studies + live demos</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Projects</p>
+      <h2>Selected work</h2>
+      <p class="sub">Concept websites I designed and coded myself to show what I can build. <strong>The businesses are fictional</strong>, and every project is a demo, not paid client work. Each one has a case study and a live demo.</p>
+    </div>
+    <div class="projects" data-reveal>
+<article class="project">
+  <a class="thumb" href="/projects/wordpress-theme/" tabindex="-1" aria-hidden="true"><img src="/assets/img/thumb-wptheme.jpg" alt="" loading="lazy" decoding="async" width="1200" height="750"></a>
+  <div class="p-body">
+    <span class="badge new">New · WordPress theme</span>
+    <h3>Crumb — custom WordPress theme</h3>
+    <p>A classic WordPress theme written from scratch in PHP: template hierarchy, menus, custom logo, widgets and escaped output. Downloadable as a zip.</p>
+    <ul class="tags" aria-label="Technologies"><li>WordPress</li><li>PHP</li><li>HTML</li><li>CSS</li></ul>
+    <div class="p-links">
+      <a class="link" href="/projects/wordpress-theme/">Case study<span class="sr-only">: Crumb</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      <a class="link" href="/demos/wp-theme/">Live demo<span class="sr-only">: Crumb</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</article>
+<article class="project">
+  <a class="thumb" href="/projects/php-booking/" tabindex="-1" aria-hidden="true"><img src="/assets/img/thumb-booking.jpg" alt="" loading="lazy" decoding="async" width="1200" height="750"></a>
+  <div class="p-body">
+    <span class="badge new">New · PHP form</span>
+    <h3>Pedal &amp; Co. — PHP booking form</h3>
+    <p>A booking form with real server-side validation in PHP: CSRF token, honeypot, escaped output and Post/Redirect/Get. Live demo mirrors the rules in JavaScript.</p>
+    <ul class="tags" aria-label="Technologies"><li>PHP</li><li>HTML</li><li>JavaScript</li><li>Forms</li></ul>
+    <div class="p-links">
+      <a class="link" href="/projects/php-booking/">Case study<span class="sr-only">: Pedal &amp; Co.</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      <a class="link" href="/demos/booking/">Live demo<span class="sr-only">: Pedal &amp; Co.</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</article>
+<article class="project">
+  <a class="thumb" href="/projects/restaurant/" tabindex="-1" aria-hidden="true"><img src="/assets/img/thumb-restaurant.jpg" alt="" loading="lazy" decoding="async" width="1200" height="750"></a>
+  <div class="p-body">
+    <span class="badge">Demo · Restaurant</span>
+    <h3>Trattoria Lumea — restaurant website</h3>
+    <p>One-page restaurant site: menu with JavaScript tabs rendered from data, opening hours and a table-booking form that blocks past dates.</p>
+    <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS Grid</li><li>JavaScript</li></ul>
+    <div class="p-links">
+      <a class="link" href="/projects/restaurant/">Case study<span class="sr-only">: Trattoria Lumea</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      <a class="link" href="/demos/restaurant/">Live demo<span class="sr-only">: Trattoria Lumea</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</article>
+<article class="project">
+  <a class="thumb" href="/projects/salon/" tabindex="-1" aria-hidden="true"><img src="/assets/img/thumb-salon.jpg" alt="" loading="lazy" decoding="async" width="1200" height="750"></a>
+  <div class="p-body">
+    <span class="badge">Demo · Beauty salon</span>
+    <h3>Studio Aura — beauty salon website</h3>
+    <p>Elegant salon site with a price list, team section and an appointment picker that shows free and busy time slots.</p>
+    <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+    <div class="p-links">
+      <a class="link" href="/projects/salon/">Case study<span class="sr-only">: Studio Aura</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      <a class="link" href="/demos/salon/">Live demo<span class="sr-only">: Studio Aura</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</article>
+<article class="project">
+  <a class="thumb" href="/projects/plumber/" tabindex="-1" aria-hidden="true"><img src="/assets/img/thumb-plumber.jpg" alt="" loading="lazy" decoding="async" width="1200" height="750"></a>
+  <div class="p-body">
+    <span class="badge">Demo · Local service</span>
+    <h3>FixFlow Plumbing — local service website</h3>
+    <p>Lead-focused site for a local plumber: click-to-call, service areas, FAQ accordion and an instant price estimator.</p>
+    <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+    <div class="p-links">
+      <a class="link" href="/projects/plumber/">Case study<span class="sr-only">: FixFlow Plumbing</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      <a class="link" href="/demos/plumber/">Live demo<span class="sr-only">: FixFlow Plumbing</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</article>
+<article class="project">
+  <a class="thumb" href="/projects/launch/" tabindex="-1" aria-hidden="true"><img src="/assets/img/thumb-launch.jpg" alt="" loading="lazy" decoding="async" width="1200" height="750"></a>
+  <div class="p-body">
+    <span class="badge">Demo · Landing page</span>
+    <h3>Taskly — SaaS landing page</h3>
+    <p>Product landing page with a monthly/yearly pricing toggle, feature grid and a waitlist form with email validation.</p>
+    <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+    <div class="p-links">
+      <a class="link" href="/projects/launch/">Case study<span class="sr-only">: Taskly</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      <a class="link" href="/demos/launch/">Live demo<span class="sr-only">: Taskly</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</article>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="section alt">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Skills</p>
+      <h2>What I work with</h2>
+      <p class="sub">A short, honest list. These are the tools I actually use in the projects above.</p>
+    </div>
+    <div class="skills" data-reveal>
+<div class="skill"><span class="ico" aria-hidden="true">HTML</span><div><h3>HTML5</h3><p>Semantic markup: landmarks, headings in order, real buttons and labelled form fields.</p></div></div>
+<div class="skill"><span class="ico" aria-hidden="true">CSS</span><div><h3>CSS3</h3><p>Flexbox, Grid, custom properties, media queries, dark/light themes, subtle animations.</p></div></div>
+<div class="skill"><span class="ico" aria-hidden="true">JS</span><div><h3>JavaScript</h3><p>DOM, events and form validation in plain JavaScript; dynamic content from data.</p></div></div>
+<div class="skill"><span class="ico" aria-hidden="true">WP</span><div><h3>WordPress</h3><p>Small-business sites and a custom classic theme (templates, menus, widgets).</p></div></div>
+<div class="skill"><span class="ico" aria-hidden="true">PHP</span><div><h3>PHP</h3><p>WordPress templates and form handling with server-side validation and escaping.</p></div></div>
+<div class="skill"><span class="ico" aria-hidden="true">RWD</span><div><h3>Responsive design</h3><p>Mobile-first layouts that work from small phones to wide screens.</p></div></div>
+<div class="skill"><span class="ico" aria-hidden="true">A11Y</span><div><h3>Accessibility basics</h3><p>Contrast, alt text, keyboard navigation, skip links, ARIA where needed.</p></div></div>
+<div class="skill"><span class="ico" aria-hidden="true">SEO</span><div><h3>SEO basics</h3><p>Titles, meta descriptions, Open Graph, sitemap, clean headings and fast pages.</p></div></div>
+<div class="skill"><span class="ico" aria-hidden="true">AI</span><div><h3>AI-assisted workflow</h3><p>I use AI tools every day to work faster, and I always review and test the result.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="quality" class="section">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">How I build</p>
+      <h2>What employers ask for, built in</h2>
+      <p class="sub">Junior web and WordPress job ads keep asking for the same basics. Here is how this site and the demos cover them.</p>
+    </div>
+    <ul class="checks">
+      <li><b>Responsive.</b> Mobile-first CSS, tested on phone, tablet and desktop widths.</li>
+      <li><b>Accessible.</b> Skip link, keyboard navigation, focus styles, alt text, labelled forms, reduced-motion support.</li>
+      <li><b>Semantic HTML.</b> Proper landmarks and heading order; HTML checked with a validator.</li>
+      <li><b>Fast.</b> No frameworks, no web fonts, lazy-loaded images, cached assets; checked with Lighthouse.</li>
+      <li><b>SEO basics.</b> Unique titles and descriptions, Open Graph tags, sitemap.xml and robots.txt.</li>
+      <li><b>WordPress &amp; PHP.</b> A custom theme and a PHP form with server-side validation and escaping.</li>
+      <li><b>Forms.</b> Client and server validation, clear error messages, spam protection.</li>
+      <li><b>Cross-browser.</b> Standard CSS and plain JavaScript, no browser-specific hacks, made for all modern browsers.</li>
+      <li><b>Deploy-ready.</b> Plain static files with a <code>vercel.json</code> config and no build step.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="services" class="section alt">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Services</p>
+      <h2>How I can help</h2>
+      <p class="sub">For a team: a reliable junior who ships clean pages. For a small business: a simple website that works.</p>
+    </div>
+    <div class="grid3" data-reveal>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><h3>Business websites</h3><p>Clear, mobile-friendly sites for restaurants, salons, shops and local services, up to a few pages.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m5.5 8 3.8 10L12 10l2.7 8 3.8-10M4 8h4m8 0h4"/></svg></div><h3>WordPress sites &amp; themes</h3><p>Set up WordPress, build or adjust a lightweight theme, menus and pages the owner can edit.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v4m0 10v4M3 12h4m10 0h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg></div><h3>Landing pages</h3><p>One focused page for a product, offer or event, built to get calls, bookings or sign-ups.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><h3>Forms &amp; bookings</h3><p>Contact and booking forms with validation, clear errors and spam protection.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div><h3>Fixes &amp; updates</h3><p>Fix layout bugs, make older pages work on phones, update content and small features.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Speed, SEO &amp; accessibility</h3><p>Basic audits and fixes: page titles, meta tags, image sizes, contrast and keyboard access.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="wrap about">
+    <div class="avatar" aria-hidden="true">DC</div>
+    <div>
+      <p class="eyebrow">About</p>
+      <h2>Hi, I&rsquo;m David Constantin</h2>
+      <p>I&rsquo;m a junior web developer based in Teleorman, Romania. I studied Applied Informatics in Industrial Engineering at the Politehnica University of Bucharest and finished a Mathematics-Informatics high school profile.</p>
+      <p>Before web development I worked in customer-facing and coordination roles, including Assistant Team Leader at eMAG and Assistant Manager at H&amp;M. That taught me to communicate clearly, stay calm under pressure and deliver what I promise.</p>
+      <p>Today I build websites as a freelancer on Fiverr and Upwork. The projects on this page are my own demo concepts. I use AI tools every day to learn and work faster, and I review and test everything before it ships. I&rsquo;m looking for a remote junior web, WordPress or frontend role where I can learn from a team and grow fast.</p>
+      <dl class="facts">
+        <div><dt>Location</dt><dd>Romania (EET, UTC+2)</dd></div>
+        <div><dt>Availability</dt><dd>Can start immediately</dd></div>
+        <div><dt>Work type</dt><dd>Remote &middot; Full-time &middot; Freelance</dd></div>
+        <div><dt>Languages</dt><dd>Romanian (native), English (basic)</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" aria-labelledby="process-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Process</p><h2 id="process-title">How I work</h2></div>
+    <ol class="steps">
+      <li><b>Understand</b><span>Clarify the goal, the pages and what &ldquo;done&rdquo; means.</span></li>
+      <li><b>Build</b><span>Semantic HTML first, then CSS and JavaScript, mobile-first.</span></li>
+      <li><b>Test</b><span>HTML validator, Lighthouse, keyboard-only and mobile checks.</span></li>
+      <li><b>Ship &amp; update</b><span>Deploy, share the link and keep improving from feedback.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="wrap">
+    <div class="contact-box">
+      <p class="eyebrow">Contact</p>
+      <h2>Let&rsquo;s work together</h2>
+      <p class="sub">Hiring a junior web developer, or need a website? Send me an email and I&rsquo;ll get back to you quickly.</p>
+      <div class="cta" style="margin:1.5rem 0 0"><a class="btn btn-accent" href="mailto:davidgeorgeconstantin@gmail.com?subject=Hello%20David"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> Email me</a><a class="btn btn-ghost" href="/cv/George_David_Constantin_CV_EN_v2.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg> Download CV (PDF)</a></div>
+      <div class="contact-grid">
+        <a class="c-card" href="mailto:davidgeorgeconstantin@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><b>Email</b><small>davidgeorgeconstantin@gmail.com</small></a>
+        <a class="c-card" href="https://github.com/davidgeorgeconstantin-spec" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><b>GitHub</b><small>davidgeorgeconstantin-spec</small></a>
+        <a class="c-card" href="https://www.upwork.com/freelancers/~01b1fd8349cd518ace" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg><b>Upwork</b><small>View my profile</small></a>
+        <a class="c-card" href="https://www.fiverr.com/davidgeorgecon" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><b>Fiverr</b><small>@davidgeorgecon</small></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <span>&copy; <span id="y">2026</span> George David Constantin &middot; Hand-coded with HTML, CSS &amp; JavaScript</span>
+    <span><a href="mailto:davidgeorgeconstantin@gmail.com">Email</a> &middot; <a href="https://github.com/davidgeorgeconstantin-spec" rel="noopener">GitHub</a> &middot; <a href="#main">Back to top &uarr;</a></span>
+  </div>
+</footer>
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://davidgeorgeconstantin-spec.github.io/sitemap.xml
