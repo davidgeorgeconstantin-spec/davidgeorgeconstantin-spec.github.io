@@ -1,0 +1,34 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FixFlow Plumbing — Demo local service website</title><meta name="description" content="Demo local service website for a fictional plumber: click-to-call, FAQ and an instant price estimator. Built by David Constantin."><link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<style>
+:root{--blue:#0b5cff;--navy:#0a1f44;--yel:#ffc533;--bg:#f4f7fc}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--navy);line-height:1.55}.w{width:min(1100px,92%);margin:auto}
+.top{background:var(--navy);color:#cfe0ff;font-size:14px;text-align:center;padding:8px}
+nav{background:#fff;box-shadow:0 2px 10px rgba(10,31,68,.06)}nav .w{display:flex;justify-content:space-between;align-items:center;height:70px}nav b{font-size:22px}nav b i{color:var(--blue);font-style:normal}
+.call{background:var(--yel);color:var(--navy);padding:11px 18px;border-radius:10px;font-weight:800;text-decoration:none}
+.hero{background:linear-gradient(120deg,var(--navy),#123a85);color:#fff;padding:80px 0}.hero .w{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}.hero h1{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.1;margin-bottom:16px}.hero p{color:#cfe0ff;margin-bottom:24px}.badges{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;color:#cfe0ff}
+.est{background:#fff;color:var(--navy);border-radius:18px;padding:26px;box-shadow:0 20px 50px rgba(0,0,0,.25)}.est h3{margin-bottom:14px}.est label{display:block;font-size:13px;font-weight:600;margin:10px 0 4px}.est select,.est input{width:100%;padding:11px;border:1px solid #d5deec;border-radius:10px;font-size:15px}.price{margin-top:16px;background:var(--bg);border-radius:12px;padding:14px;text-align:center;font-size:14px}.price b{display:block;font-size:28px;color:var(--blue)}
+section{padding:70px 0}h2{font-size:2rem;margin-bottom:28px;text-align:center}
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.svc div{background:#fff;border-radius:16px;padding:24px;border:1px solid #e3e9f4}.svc span{font-size:30px}.svc h3{margin:8px 0 4px;font-size:1.05rem}.svc p{font-size:14px;color:#4b5b78}
+.areas{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}.areas span{background:#fff;border:1px solid #d5deec;padding:8px 16px;border-radius:99px;font-size:14px}
+.faq{max-width:760px;margin:auto}details{background:#fff;border:1px solid #e3e9f4;border-radius:12px;padding:16px 20px;margin-bottom:12px}summary{font-weight:700;cursor:pointer}details p{margin-top:10px;color:#4b5b78}
+.sticky{display:none}footer{text-align:center;padding:30px;font-size:14px;color:#4b5b78}
+@media(max-width:820px){.hero .w,.svc{grid-template-columns:1fr}.svc{grid-template-columns:1fr 1fr}nav .call{display:none}.sticky{display:block;position:fixed;bottom:0;left:0;right:0;background:var(--yel);text-align:center;padding:16px;font-weight:800;color:var(--navy);text-decoration:none;z-index:99}footer{padding-bottom:80px}}
+@media(max-width:480px){.svc{grid-template-columns:1fr}}
+.est .est-t{font-size:1.17em;text-align:left;margin-bottom:14px}</style></head><body>
+<aside class="top" aria-label="Emergency service">🚨 24/7 emergency service · Average arrival: under 60 minutes</aside>
+<nav aria-label="Main"><div class="w"><b>Fix<i>Flow</i> Plumbing</b><a class="call" href="tel:+000000000">📞 Call now</a></div></nav>
+<main>
+<header class="hero"><div class="w"><div><h1>Leaking pipe? Blocked drain? We fix it today.</h1><p>Licensed local plumbers. Clear prices before we start — no surprises.</p><a class="call" href="tel:+000000000">📞 Call +00&nbsp;000&nbsp;000&nbsp;000</a><div class="badges" style="margin-top:22px"><span>✔ Fixed prices</span><span>✔ 12-month guarantee</span><span>✔ Clean work</span></div></div>
+<div class="est"><h2 class="est-t">Instant price estimate</h2><label for="job">Job type</label><select id="job"><option value="60">Blocked drain</option><option value="80">Leak repair</option><option value="120">Boiler check</option><option value="150">Tap / toilet install</option></select><label for="urg">When?</label><select id="urg"><option value="1">This week</option><option value="1.3">Today</option><option value="1.6">Emergency (now)</option></select><label for="hrs">Estimated hours</label><input id="hrs" type="range" min="1" max="5" value="1"><div class="price" aria-live="polite">Estimated price<b id="p">€60</b><small id="h">1 hour</small></div></div></div></header>
+<section><div class="w"><h2>Our services</h2><div class="svc"><div><span>🚿</span><h3>Leak repairs</h3><p>Pipes, taps, showers and radiators.</p></div><div><span>🚽</span><h3>Drain cleaning</h3><p>Sinks, toilets and outside drains.</p></div><div><span>🔥</span><h3>Boilers &amp; heating</h3><p>Checks, repairs and servicing.</p></div><div><span>🛁</span><h3>Bathroom installs</h3><p>New toilets, sinks and showers.</p></div></div></div></section>
+<section style="background:#fff"><div class="w"><h2>Areas we cover</h2><div class="areas"><span>City Centre</span><span>North District</span><span>Riverside</span><span>Old Town</span><span>West Park</span><span>Hillview</span><span>Station Area</span></div></div></section>
+<section><div class="w"><h2>Questions</h2><div class="faq"><details open><summary>How fast can you come?</summary><p>For emergencies we aim to arrive within one hour.</p></details><details><summary>Do you charge for a quote?</summary><p>No. You get a clear price before any work starts.</p></details><details><summary>Is your work guaranteed?</summary><p>Yes, all repairs come with a 12-month guarantee.</p></details></div></div></section>
+</main>
+<footer>© FixFlow Plumbing — a fictional business. Demo website.</footer>
+<nav aria-label="Quick call"><a class="sticky" href="tel:+000000000">📞 Tap to call now</a></nav>
+<aside aria-label="Demo notice" style="position:fixed;bottom:12px;left:12px;z-index:999;background:#111827;color:#fff;font:600 12px/1.3 system-ui,sans-serif;padding:8px 12px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.3)">Demo concept · fictional business · built by <a href="/" style="color:#a5b4fc">David Constantin</a></aside>
+<script>
+const j=document.getElementById('job'),u=document.getElementById('urg'),h=document.getElementById('hrs');
+function calc(){const v=Math.round(+j.value*+u.value+(h.value-1)*45);document.getElementById('p').textContent='€'+v;document.getElementById('h').textContent=h.value+(h.value==1?' hour':' hours')+' · demo pricing'}
+[j,u,h].forEach(e=>e.oninput=calc);calc();
+</script></body></html>
