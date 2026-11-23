@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pedal &amp; Co. — PHP booking form — Case study · David Constantin</title>
+<meta name="description" content="Case study: A booking form with real server-side validation in PHP: CSRF token, honeypot, escaped output and Post/Redirect/Get. Live demo mirrors the rules in JavaScript.">
+<meta name="author" content="George David Constantin">
+<link rel="canonical" href="https://davidgeorgeconstantin-spec.github.io/projects/php-booking/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="David Constantin — Web Developer">
+<meta property="og:title" content="Pedal &amp; Co. — PHP booking form — Case study · David Constantin">
+<meta property="og:description" content="Case study: A booking form with real server-side validation in PHP: CSRF token, honeypot, escaped output and Post/Redirect/Get. Live demo mirrors the rules in JavaScript.">
+<meta property="og:url" content="https://davidgeorgeconstantin-spec.github.io/projects/php-booking/">
+<meta property="og:image" content="https://davidgeorgeconstantin-spec.github.io/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0d17">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<script>try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="/" class="logo"><span class="logo-mark" aria-hidden="true">DC</span><span>David Constantin</span></a>
+    <nav id="menu" class="menu" aria-label="Main"><a href="/#projects">Projects</a><a href="/#skills">Skills</a><a href="/#services">Services</a><a href="/#about">About</a><a href="/#contact">Contact</a><a href="/cv/George_David_Constantin_CV_EN_v2.pdf" download>CV (PDF)</a></nav>
+    <div class="nav-tools">
+      <button class="icon-btn theme-toggle" type="button" aria-pressed="false" aria-label="Switch to light theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="moon"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+  <section class="cs-hero">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/#projects">Projects</a> / <span aria-current="page">Pedal &amp; Co.</span></nav>
+    <p class="demo-flag">Demo concept for a fictional business. Not real client work.</p>
+    <h1>Pedal &amp; Co. — PHP booking form</h1>
+    <p class="lead">A booking form with real server-side validation in PHP: CSRF token, honeypot, escaped output and Post/Redirect/Get. Live demo mirrors the rules in JavaScript.</p>
+    <div class="cta"><a class="btn btn-accent" href="/demos/booking/">Try the live demo</a><a class="btn btn-ghost" href="/php-booking/booking.php" download>Download booking.php</a></div>
+    <dl class="meta">
+      <div><dt>Business</dt><dd>Pedal &amp; Co., a fictional bike-repair shop</dd></div>
+      <div><dt>Type</dt><dd>PHP form</dd></div>
+      <div><dt>My role</dt><dd>Design &amp; code</dd></div>
+      <div><dt>Tech</dt><dd>PHP, HTML, JavaScript, Forms</dd></div>
+    </dl>
+  </section>
+  <div class="shots">
+    <figure class="shot"><img src="/assets/img/thumb-booking.jpg" alt="Desktop screenshot of the Pedal &amp; Co. demo" width="1200" height="750"><figcaption>Desktop</figcaption></figure>
+    <figure class="shot"><img src="/assets/img/mobile-booking.jpg" alt="Mobile screenshot of the Pedal &amp; Co. demo" width="390" height="780" loading="lazy" decoding="async"><figcaption>Mobile</figcaption></figure>
+  </div>
+  <article class="prose">
+    <h2>The problem</h2><p>Contact and booking forms are on almost every small-business site, and they are also where spam, broken emails and security holes appear. Checking fields only in the browser is not enough, because anyone can skip JavaScript.</p>
+    <h2>The solution</h2><p>A single PHP file that validates every field on the server, protects the form against fake submissions and safely builds the notification email. Because this portfolio is hosted as a static site, the live demo re-implements the same rules in JavaScript; the PHP source is shown below and can be run with <code>php -S localhost:8000</code>.</p>
+    <h2>Key features</h2><ul><li>Server-side validation: name length, email (<code>FILTER_VALIDATE_EMAIL</code>), phone pattern, service from an allow-list, date not in the past, not on Sunday, max 60 days ahead, time from opening hours</li><li>CSRF token stored in the session and compared with <code>hash_equals()</code>, rotated after each booking</li><li>Honeypot field to stop simple spam bots without a captcha</li><li>All output escaped with <code>htmlspecialchars()</code> to prevent XSS; old values refilled after an error</li><li>Post/Redirect/Get (HTTP 303) so refreshing the page does not send the form twice</li><li>Accessible errors: summary with <code>role="alert"</code>, links to each field, <code>aria-invalid</code> and <code>aria-describedby</code></li></ul>
+    <h2>Quality checks</h2>
+    <ul><li>Responsive from 320px phones to wide desktop screens</li><li>Keyboard navigation and visible focus states</li><li>Labelled form fields and readable colour contrast</li><li>No frameworks: plain HTML, CSS and JavaScript, plus PHP</li></ul>
+    <h2>Source code</h2><p>The real files, shown exactly as they are in the project.</p><div class="code-block"><div class="code-head"><span>booking.php</span><button class="copy" type="button">Copy</button></div><pre tabindex="0" aria-label="Source code of booking.php"><code>&lt;?php
+/**
+ * Pedal &amp; Co. (fictional bike-repair shop) — booking form with server-side validation.
+ * Demo concept by David Constantin. Plain PHP 7.4+, no framework, single file.
+ *
+ * What it shows:
+ *  - Server-side validation (never trust the browser)
+ *  - CSRF token + honeypot field against spam bots
+ *  - Escaping all output with htmlspecialchars() (XSS protection)
+ *  - Post/Redirect/Get so a refresh does not resend the form
+ *  - Email header-injection protection
+ */
+
+declare(strict_types=1);
+session_start();
+
+const SERVICES   = [&#x27;tune-up&#x27; =&gt; &#x27;Basic tune-up&#x27;, &#x27;brakes&#x27; =&gt; &#x27;Brake service&#x27;, &#x27;wheel&#x27; =&gt; &#x27;Wheel truing&#x27;, &#x27;full&#x27; =&gt; &#x27;Full service&#x27;];
+const OPEN_HOURS = [&#x27;09:00&#x27;, &#x27;10:00&#x27;, &#x27;11:00&#x27;, &#x27;12:00&#x27;, &#x27;14:00&#x27;, &#x27;15:00&#x27;, &#x27;16:00&#x27;, &#x27;17:00&#x27;];
+const SHOP_EMAIL = &#x27;bookings@example.com&#x27;; // fictional address
+
+function e(string $value): string
+{
+    return htmlspecialchars($value, ENT_QUOTES | ENT_HTML5, &#x27;UTF-8&#x27;);
+}
+
+/** Character count that works with or without the mbstring extension. */
+function text_length(string $value): int
+{
+    return function_exists(&#x27;mb_strlen&#x27;) ? mb_strlen($value, &#x27;UTF-8&#x27;) : (int) preg_match_all(&#x27;/./us&#x27;, $value);
+}
+
+if (empty($_SESSION[&#x27;csrf&#x27;])) {
+    $_SESSION[&#x27;csrf&#x27;] = bin2hex(random_bytes(32));
+}
+
+/**
+ * Validates the submitted data. Returns [cleanData, errors].
+ */
+function validate_booking(array $in): array
+{
+    $data = [
+        &#x27;name&#x27;    =&gt; trim((string) ($in[&#x27;name&#x27;] ?? &#x27;&#x27;)),
+        &#x27;email&#x27;   =&gt; trim((string) ($in[&#x27;email&#x27;] ?? &#x27;&#x27;)),
+        &#x27;phone&#x27;   =&gt; preg_replace(&#x27;/[\s().-]/&#x27;, &#x27;&#x27;, (string) ($in[&#x27;phone&#x27;] ?? &#x27;&#x27;)),
+        &#x27;service&#x27; =&gt; (string) ($in[&#x27;service&#x27;] ?? &#x27;&#x27;),
+        &#x27;date&#x27;    =&gt; (string) ($in[&#x27;date&#x27;] ?? &#x27;&#x27;),
+        &#x27;time&#x27;    =&gt; (string) ($in[&#x27;time&#x27;] ?? &#x27;&#x27;),
+        &#x27;notes&#x27;   =&gt; trim((string) ($in[&#x27;notes&#x27;] ?? &#x27;&#x27;)),
+    ];
+    $errors = [];
+
+    $nameLength = text_length($data[&#x27;name&#x27;]);
+    if ($nameLength &lt; 2 || $nameLength &gt; 80) {
+        $errors[&#x27;name&#x27;] = &#x27;Please enter your name (2–80 characters).&#x27;;
+    }
+    if (!filter_var($data[&#x27;email&#x27;], FILTER_VALIDATE_EMAIL)) {
+        $errors[&#x27;email&#x27;] = &#x27;Please enter a valid email address.&#x27;;
+    }
+    if (!preg_match(&#x27;/^\+?[0-9]{9,15}$/&#x27;, $data[&#x27;phone&#x27;])) {
+        $errors[&#x27;phone&#x27;] = &#x27;Please enter a valid phone number (9–15 digits).&#x27;;
+    }
+    if (!array_key_exists($data[&#x27;service&#x27;], SERVICES)) {
+        $errors[&#x27;service&#x27;] = &#x27;Please choose a service from the list.&#x27;;
+    }
+
+    $date = DateTimeImmutable::createFromFormat(&#x27;!Y-m-d&#x27;, $data[&#x27;date&#x27;]);
+    $today = new DateTimeImmutable(&#x27;today&#x27;);
+    if (!$date || $date-&gt;format(&#x27;Y-m-d&#x27;) !== $data[&#x27;date&#x27;]) {
+        $errors[&#x27;date&#x27;] = &#x27;Please choose a valid date.&#x27;;
+    } elseif ($date &lt; $today) {
+        $errors[&#x27;date&#x27;] = &#x27;The date cannot be in the past.&#x27;;
+    } elseif ($date &gt; $today-&gt;modify(&#x27;+60 days&#x27;)) {
+        $errors[&#x27;date&#x27;] = &#x27;You can book up to 60 days ahead.&#x27;;
+    } elseif ((int) $date-&gt;format(&#x27;N&#x27;) === 7) {
+        $errors[&#x27;date&#x27;] = &#x27;We are closed on Sundays.&#x27;;
+    }
+
+    if (!in_array($data[&#x27;time&#x27;], OPEN_HOURS, true)) {
+        $errors[&#x27;time&#x27;] = &#x27;Please choose one of the available time slots.&#x27;;
+    }
+    if (text_length($data[&#x27;notes&#x27;]) &gt; 500) {
+        $errors[&#x27;notes&#x27;] = &#x27;Notes can be at most 500 characters.&#x27;;
+    }
+
+    return [$data, $errors];
+}
+
+$errors = [];
+$old    = [];
+
+if ($_SERVER[&#x27;REQUEST_METHOD&#x27;] === &#x27;POST&#x27;) {
+    // 1. CSRF check
+    if (!hash_equals($_SESSION[&#x27;csrf&#x27;], (string) ($_POST[&#x27;csrf&#x27;] ?? &#x27;&#x27;))) {
+        http_response_code(400);
+        exit(&#x27;Invalid form token. Please reload the page and try again.&#x27;);
+    }
+    // 2. Honeypot: real people never fill the hidden &quot;website&quot; field
+    if (!empty($_POST[&#x27;website&#x27;])) {
+        header(&#x27;Location: &#x27; . strtok($_SERVER[&#x27;REQUEST_URI&#x27;], &#x27;?&#x27;) . &#x27;?sent=1&#x27;, true, 303);
+        exit;
+    }
+
+    [$old, $errors] = validate_booking($_POST);
+
+    if (!$errors) {
+        // 3. Remove line breaks so nobody can inject extra mail headers
+        $safeEmail = str_replace([&quot;\r&quot;, &quot;\n&quot;], &#x27;&#x27;, $old[&#x27;email&#x27;]);
+        $body = sprintf(
+            &quot;New booking\n\nName: %s\nEmail: %s\nPhone: %s\nService: %s\nDate: %s at %s\nNotes: %s\n&quot;,
+            $old[&#x27;name&#x27;], $safeEmail, $old[&#x27;phone&#x27;], SERVICES[$old[&#x27;service&#x27;]], $old[&#x27;date&#x27;], $old[&#x27;time&#x27;], $old[&#x27;notes&#x27;]
+        );
+        $headers = &#x27;From: website@example.com&#x27; . &quot;\r\n&quot; . &#x27;Reply-To: &#x27; . $safeEmail;
+        @mail(SHOP_EMAIL, &#x27;New booking: &#x27; . SERVICES[$old[&#x27;service&#x27;]], $body, $headers);
+
+        $_SESSION[&#x27;csrf&#x27;] = bin2hex(random_bytes(32)); // one-time token
+        // 4. Post/Redirect/Get
+        header(&#x27;Location: &#x27; . strtok($_SERVER[&#x27;REQUEST_URI&#x27;], &#x27;?&#x27;) . &#x27;?sent=1&#x27;, true, 303);
+        exit;
+    }
+}
+
+$sent = isset($_GET[&#x27;sent&#x27;]);
+?&gt;
+&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Book a service — Pedal &amp;amp; Co. (demo)&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;main&gt;
+    &lt;h1&gt;Book a bike service&lt;/h1&gt;
+    &lt;p&gt;&lt;em&gt;Demo concept for a fictional business.&lt;/em&gt;&lt;/p&gt;
+
+    &lt;?php if ($sent) : ?&gt;
+        &lt;p role=&quot;status&quot;&gt;Thank you! Your booking request was received. We will confirm by email.&lt;/p&gt;
+    &lt;?php endif; ?&gt;
+
+    &lt;?php if ($errors) : ?&gt;
+        &lt;div role=&quot;alert&quot;&gt;
+            &lt;p&gt;Please fix &lt;?= count($errors) ?&gt; field(s):&lt;/p&gt;
+            &lt;ul&gt;
+                &lt;?php foreach ($errors as $field =&gt; $message) : ?&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&lt;?= e($field) ?&gt;&quot;&gt;&lt;?= e($message) ?&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;?php endforeach; ?&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;?php endif; ?&gt;
+
+    &lt;form method=&quot;post&quot; action=&quot;&quot; novalidate&gt;
+        &lt;input type=&quot;hidden&quot; name=&quot;csrf&quot; value=&quot;&lt;?= e($_SESSION[&#x27;csrf&#x27;]) ?&gt;&quot;&gt;
+        &lt;div hidden&gt;&lt;label&gt;Website &lt;input name=&quot;website&quot; tabindex=&quot;-1&quot; autocomplete=&quot;off&quot;&gt;&lt;/label&gt;&lt;/div&gt;
+
+        &lt;label for=&quot;name&quot;&gt;Full name&lt;/label&gt;
+        &lt;input id=&quot;name&quot; name=&quot;name&quot; autocomplete=&quot;name&quot; required value=&quot;&lt;?= e($old[&#x27;name&#x27;] ?? &#x27;&#x27;) ?&gt;&quot;
+               &lt;?= isset($errors[&#x27;name&#x27;]) ? &#x27;aria-invalid=&quot;true&quot; aria-describedby=&quot;name-err&quot;&#x27; : &#x27;&#x27; ?&gt;&gt;
+        &lt;?php if (isset($errors[&#x27;name&#x27;])) : ?&gt;&lt;p id=&quot;name-err&quot;&gt;&lt;?= e($errors[&#x27;name&#x27;]) ?&gt;&lt;/p&gt;&lt;?php endif; ?&gt;
+
+        &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
+        &lt;input id=&quot;email&quot; name=&quot;email&quot; type=&quot;email&quot; autocomplete=&quot;email&quot; required value=&quot;&lt;?= e($old[&#x27;email&#x27;] ?? &#x27;&#x27;) ?&gt;&quot;
+               &lt;?= isset($errors[&#x27;email&#x27;]) ? &#x27;aria-invalid=&quot;true&quot; aria-describedby=&quot;email-err&quot;&#x27; : &#x27;&#x27; ?&gt;&gt;
+        &lt;?php if (isset($errors[&#x27;email&#x27;])) : ?&gt;&lt;p id=&quot;email-err&quot;&gt;&lt;?= e($errors[&#x27;email&#x27;]) ?&gt;&lt;/p&gt;&lt;?php endif; ?&gt;
+
+        &lt;label for=&quot;phone&quot;&gt;Phone&lt;/label&gt;
+        &lt;input id=&quot;phone&quot; name=&quot;phone&quot; type=&quot;tel&quot; autocomplete=&quot;tel&quot; required value=&quot;&lt;?= e($old[&#x27;phone&#x27;] ?? &#x27;&#x27;) ?&gt;&quot;
+               &lt;?= isset($errors[&#x27;phone&#x27;]) ? &#x27;aria-invalid=&quot;true&quot; aria-describedby=&quot;phone-err&quot;&#x27; : &#x27;&#x27; ?&gt;&gt;
+        &lt;?php if (isset($errors[&#x27;phone&#x27;])) : ?&gt;&lt;p id=&quot;phone-err&quot;&gt;&lt;?= e($errors[&#x27;phone&#x27;]) ?&gt;&lt;/p&gt;&lt;?php endif; ?&gt;
+
+        &lt;label for=&quot;service&quot;&gt;Service&lt;/label&gt;
+        &lt;select id=&quot;service&quot; name=&quot;service&quot; required&gt;
+            &lt;option value=&quot;&quot;&gt;Choose…&lt;/option&gt;
+            &lt;?php foreach (SERVICES as $key =&gt; $label) : ?&gt;
+                &lt;option value=&quot;&lt;?= e($key) ?&gt;&quot; &lt;?= ($old[&#x27;service&#x27;] ?? &#x27;&#x27;) === $key ? &#x27;selected&#x27; : &#x27;&#x27; ?&gt;&gt;&lt;?= e($label) ?&gt;&lt;/option&gt;
+            &lt;?php endforeach; ?&gt;
+        &lt;/select&gt;
+        &lt;?php if (isset($errors[&#x27;service&#x27;])) : ?&gt;&lt;p&gt;&lt;?= e($errors[&#x27;service&#x27;]) ?&gt;&lt;/p&gt;&lt;?php endif; ?&gt;
+
+        &lt;label for=&quot;date&quot;&gt;Date&lt;/label&gt;
+        &lt;input id=&quot;date&quot; name=&quot;date&quot; type=&quot;date&quot; required min=&quot;&lt;?= e(date(&#x27;Y-m-d&#x27;)) ?&gt;&quot; value=&quot;&lt;?= e($old[&#x27;date&#x27;] ?? &#x27;&#x27;) ?&gt;&quot;&gt;
+        &lt;?php if (isset($errors[&#x27;date&#x27;])) : ?&gt;&lt;p&gt;&lt;?= e($errors[&#x27;date&#x27;]) ?&gt;&lt;/p&gt;&lt;?php endif; ?&gt;
+
+        &lt;label for=&quot;time&quot;&gt;Time&lt;/label&gt;
+        &lt;select id=&quot;time&quot; name=&quot;time&quot; required&gt;
+            &lt;option value=&quot;&quot;&gt;Choose…&lt;/option&gt;
+            &lt;?php foreach (OPEN_HOURS as $slot) : ?&gt;
+                &lt;option &lt;?= ($old[&#x27;time&#x27;] ?? &#x27;&#x27;) === $slot ? &#x27;selected&#x27; : &#x27;&#x27; ?&gt;&gt;&lt;?= e($slot) ?&gt;&lt;/option&gt;
+            &lt;?php endforeach; ?&gt;
+        &lt;/select&gt;
+        &lt;?php if (isset($errors[&#x27;time&#x27;])) : ?&gt;&lt;p&gt;&lt;?= e($errors[&#x27;time&#x27;]) ?&gt;&lt;/p&gt;&lt;?php endif; ?&gt;
+
+        &lt;label for=&quot;notes&quot;&gt;Notes (optional)&lt;/label&gt;
+        &lt;textarea id=&quot;notes&quot; name=&quot;notes&quot; maxlength=&quot;500&quot;&gt;&lt;?= e($old[&#x27;notes&#x27;] ?? &#x27;&#x27;) ?&gt;&lt;/textarea&gt;
+        &lt;?php if (isset($errors[&#x27;notes&#x27;])) : ?&gt;&lt;p&gt;&lt;?= e($errors[&#x27;notes&#x27;]) ?&gt;&lt;/p&gt;&lt;?php endif; ?&gt;
+
+        &lt;button type=&quot;submit&quot;&gt;Request booking&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+  </article>
+  <nav class="cs-nav" aria-label="More projects">
+    <a class="link" href="/projects/wordpress-theme/">&larr; Crumb</a>
+    <a class="link" href="/projects/restaurant/">Trattoria Lumea &rarr;</a>
+  </nav>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <span>&copy; <span id="y">2026</span> George David Constantin &middot; Hand-coded with HTML, CSS &amp; JavaScript</span>
+    <span><a href="mailto:davidgeorgeconstantin@gmail.com">Email</a> &middot; <a href="https://github.com/davidgeorgeconstantin-spec" rel="noopener">GitHub</a> &middot; <a href="#main">Back to top &uarr;</a></span>
+  </div>
+</footer>
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>
