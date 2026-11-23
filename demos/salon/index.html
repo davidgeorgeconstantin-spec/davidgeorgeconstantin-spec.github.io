@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Studio Aura — Demo beauty salon website</title><meta name="description" content="Demo beauty salon website for a fictional studio: price list, team and an appointment picker with free time slots. Built by David Constantin."><link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<style>
+:root{--rose:#e8c4c4;--deep:#3d2c3e;--bg:#fdf8f6;--accent:#b76e79}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--deep);line-height:1.6}.w{width:min(1080px,92%);margin:auto}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}nav b{font-size:20px;letter-spacing:.3em;font-weight:300}nav a{text-decoration:none;color:var(--deep)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:40px 0 80px}.hero h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(2.4rem,5.5vw,4.2rem);line-height:1.1}.hero h1 em{color:var(--accent)}.hero p{margin:20px 0 30px;color:#6e5a6f;max-width:440px}
+.blob{aspect-ratio:1;border-radius:46% 54% 60% 40%/50% 40% 60% 50%;background:linear-gradient(135deg,#f6d5d0,#e3b5c4 45%,#b76e79);display:grid;place-items:center;font-size:90px;box-shadow:0 30px 60px rgba(183,110,121,.3)}
+.btn{display:inline-block;background:var(--deep);color:#fff;padding:14px 26px;border-radius:99px;text-decoration:none;font-weight:600;border:0;cursor:pointer;font-size:15px}
+section{padding:70px 0}h2{font-family:Georgia,serif;font-weight:400;font-size:2.2rem;margin-bottom:30px;text-align:center}
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.pc{background:#fff;border-radius:18px;padding:26px;box-shadow:0 10px 30px rgba(61,44,62,.06)}.pc h3{margin-bottom:12px;color:var(--accent)}.pc li{list-style:none;display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #f1e6e6;font-size:15px}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}.av{width:110px;height:110px;border-radius:50%;margin:0 auto 12px;display:grid;place-items:center;font-size:40px;background:var(--rose)}.team small{color:#6e5a70}
+.book{background:var(--deep);color:#fff;border-radius:28px;padding:44px}.book h2{color:#fff}.row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:20px}.row select,.row input{padding:12px 14px;border-radius:12px;border:0;font-size:15px}
+.slots{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:16px 0 24px}.slots button{padding:10px 16px;border-radius:10px;border:1px solid #8d7290;background:transparent;color:#fff;cursor:pointer}.slots button.on{background:var(--rose);color:var(--deep);border-color:var(--rose)}.slots button:disabled{opacity:.3;text-decoration:line-through;cursor:not-allowed}
+.msg{text-align:center;min-height:24px;color:var(--rose)}.c{text-align:center}
+footer{text-align:center;padding:30px;font-size:14px;color:#6e5a70}
+@media(max-width:760px){.hero,.prices,.team{grid-template-columns:1fr}.blob{max-width:280px;margin:auto}.book{padding:28px 18px}}
+</style></head><body>
+<main>
+<div class="w"><nav><b>STUDIO AURA</b><a class="btn" href="#book">Book now</a></nav>
+<div class="hero"><div><h1>Feel beautiful,<br><em>feel like you.</em></h1><p>Hair, nails and skin care in a calm, friendly studio. Book your appointment online in under a minute.</p><a class="btn" href="#book">Choose a time</a></div><div class="blob">✂️</div></div></div>
+<section><div class="w"><h2>Services &amp; prices</h2><div class="prices">
+<div class="pc"><h3>Hair</h3><ul><li>Women's cut<b>€30</b></li><li>Men's cut<b>€18</b></li><li>Colour<b>from €55</b></li><li>Blow-dry<b>€20</b></li></ul></div>
+<div class="pc"><h3>Nails</h3><ul><li>Manicure<b>€20</b></li><li>Gel polish<b>€28</b></li><li>Pedicure<b>€30</b></li><li>Nail art<b>from €5</b></li></ul></div>
+<div class="pc"><h3>Skin</h3><ul><li>Classic facial<b>€40</b></li><li>Brow shaping<b>€12</b></li><li>Lash lift<b>€35</b></li><li>Make-up<b>€45</b></li></ul></div></div></div></section>
+<section><div class="w"><h2>Meet the team</h2><div class="team"><div><div class="av">💇‍♀️</div><b>Ana</b><br><small>Hair stylist</small></div><div><div class="av">💅</div><b>Ioana</b><br><small>Nail artist</small></div><div><div class="av">🌸</div><b>Maria</b><br><small>Skin specialist</small></div></div><p class="c" style="margin-top:14px;font-size:13px;color:#6e5a70">Team members are fictional (demo).</p></div></section>
+<section id="book"><div class="w"><div class="book"><h2>Book an appointment</h2>
+<div class="row"><select id="svc" aria-label="Service"><option>Women's cut</option><option>Gel polish</option><option>Classic facial</option></select><input type="date" id="day" aria-label="Day"></div>
+<div class="slots" id="slots"></div><div class="c"><button type="button" class="btn" style="background:var(--rose);color:var(--deep)" id="go">Confirm</button></div><p class="msg" id="msg" role="status"></p></div></div></section>
+</main>
+<footer>© Studio Aura — a fictional salon. Demo website.</footer>
+<aside aria-label="Demo notice" style="position:fixed;bottom:12px;left:12px;z-index:999;background:#111827;color:#fff;font:600 12px/1.3 system-ui,sans-serif;padding:8px 12px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.3)">Demo concept · fictional business · built by <a href="/" style="color:#a5b4fc">David Constantin</a></aside>
+<script>
+const day=document.getElementById('day'),S=document.getElementById('slots'),msg=document.getElementById('msg');let pick=null;
+day.valueAsDate=new Date();day.min=day.value;
+function render(){const seed=[...day.value].reduce((a,c)=>a+c.charCodeAt(0),0);pick=null;S.innerHTML='';['09:00','10:00','11:30','13:00','14:30','16:00','17:30','19:00'].forEach((t,i)=>{const b=document.createElement('button');b.textContent=t;b.disabled=(seed+i*7)%3===0;b.onclick=()=>{S.querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on');pick=t;msg.textContent=''};S.appendChild(b)})}
+day.onchange=render;render();
+document.getElementById('go').onclick=()=>{msg.textContent=pick?'✓ '+document.getElementById('svc').value+' on '+day.value+' at '+pick+' — demo only, nothing was booked.':'Please choose a free time slot.'};
+</script></body></html>
