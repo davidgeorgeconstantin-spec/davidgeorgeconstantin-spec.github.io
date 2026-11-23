@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crumb &amp; Co. — Static preview of the Crumb WordPress theme (demo)</title>
+<meta name="description" content="Static HTML preview of Crumb, a custom WordPress theme built by David Constantin for a fictional bakery.">
+<link rel="canonical" href="https://davidgeorgeconstantin-spec.github.io/demos/wp-theme/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/wordpress-theme/crumb/style.css">
+<style>
+.demo-bar{margin:0;background:#2b211a;color:#fbf7f1;font:600 14px/1.4 system-ui,sans-serif;text-align:center;padding:9px 12px}
+.demo-bar a{color:#ffd9c2}
+.hero{background:linear-gradient(135deg,#f3e3cf,#fbf7f1);border-bottom:1px solid var(--crumb-line);padding:4.5rem 0}
+.hero .container{display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center}
+.hero h1{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.08;margin:0 0 1rem}
+.hero p{color:var(--crumb-muted);font-size:1.15rem;margin:0 0 1.5rem}
+.button{display:inline-block;background:var(--crumb-accent);color:#fff;padding:.8rem 1.3rem;border-radius:999px;font:700 1rem system-ui,sans-serif;text-decoration:none}
+.button.alt{background:transparent;color:var(--crumb-text);border:2px solid var(--crumb-text)}
+.actions{display:flex;flex-wrap:wrap;gap:.6rem}
+.loaf{aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e9b77f,#b4532a 60%,#7a3417);box-shadow:0 30px 60px -20px rgba(122,52,23,.5);position:relative;width:100%;max-width:360px;margin-left:auto}
+.loaf::after{content:"";position:absolute;inset:22% 18%;border-top:6px solid rgba(255,240,220,.55);border-radius:50%;transform:rotate(-18deg)}
+.section-title{font-size:1.9rem;margin:0 0 1.5rem}
+.price{font:700 1rem system-ui,sans-serif;color:var(--crumb-accent)}
+.thumb{aspect-ratio:16/10;border-radius:10px;margin-bottom:1rem}
+.t1{background:linear-gradient(135deg,#e7c79c,#c0773f)}.t2{background:linear-gradient(135deg,#f0d9b5,#a65e2e)}.t3{background:linear-gradient(135deg,#f6e7cf,#d49a5b)}
+.code-note{font:14px/1.6 ui-monospace,Menlo,Consolas,monospace;background:#2b211a;color:#f3e3cf;border-radius:12px;padding:1.2rem;overflow:auto}
+@media (max-width:760px){.hero .container{grid-template-columns:1fr}.loaf{max-width:220px;margin:0 auto}}
+</style>
+</head>
+<body class="home page">
+<a class="skip-link" href="#primary">Skip to content</a>
+<aside class="demo-bar" aria-label="Demo notice">Demo concept for a fictional business &middot; static preview of the <strong>Crumb</strong> WordPress theme &middot; <a href="/projects/wordpress-theme/">Read the case study</a></aside>
+
+<header class="site-header">
+	<div class="container">
+		<div class="site-branding">
+			<p class="site-title"><a href="#top" rel="home">Crumb &amp; Co.</a></p>
+			<p class="site-description">Sourdough &amp; pastries, baked every morning</p>
+		</div>
+		<nav id="site-navigation" class="main-navigation" aria-label="Primary">
+			<button type="button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Menu</button>
+			<ul id="primary-menu" class="menu">
+				<li class="current-menu-item"><a href="#top" aria-current="page">Home</a></li>
+				<li><a href="#menu">Our bread</a></li>
+				<li><a href="#news">News</a></li>
+				<li><a href="#visit">Visit us</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<main id="primary" class="site-main" style="padding-top:0">
+	<section class="hero" id="top">
+		<div class="container">
+			<div>
+				<h1>Real bread, baked before sunrise.</h1>
+				<p>A fictional neighbourhood bakery used to show the Crumb theme: menus, pages, posts and widgets, all editable from the WordPress dashboard.</p>
+				<div class="actions"><a class="button" href="#menu">See today&rsquo;s bread</a><a class="button alt" href="#visit">Opening hours</a></div>
+			</div>
+			<div class="loaf" role="img" aria-label="Illustration of a round sourdough loaf"></div>
+		</div>
+	</section>
+
+	<div class="container" style="padding-top:3rem">
+		<section id="menu" aria-labelledby="menu-title">
+			<h2 id="menu-title" class="section-title">Our bread</h2>
+			<div class="posts-grid">
+				<article class="entry"><div class="thumb t1" role="img" aria-label="Sourdough loaf illustration"></div><h3 class="entry-title">Country sourdough</h3><p>48-hour fermentation, crisp crust.</p><p class="price">18 lei</p></article>
+				<article class="entry"><div class="thumb t2" role="img" aria-label="Rye bread illustration"></div><h3 class="entry-title">Dark rye</h3><p>Seeds, molasses and a soft crumb.</p><p class="price">16 lei</p></article>
+				<article class="entry"><div class="thumb t3" role="img" aria-label="Croissant illustration"></div><h3 class="entry-title">Butter croissant</h3><p>Laminated by hand every morning.</p><p class="price">9 lei</p></article>
+			</div>
+		</section>
+
+		<section id="news" aria-labelledby="news-title" style="margin-top:2rem">
+			<h2 id="news-title" class="section-title">From the blog <small style="font:400 .95rem system-ui,sans-serif;color:var(--crumb-muted)">(index.php loop)</small></h2>
+			<div class="posts-grid">
+				<article class="entry"><h3 class="entry-title"><a href="#news">Why we ferment for 48 hours</a></h3><p class="entry-meta">Posted on <time datetime="2026-11-20">20 November 2026</time> by Crumb &amp; Co.</p><p>Slow fermentation gives sourdough more flavour and a better crust. Here is how our process works&hellip;</p></article>
+				<article class="entry"><h3 class="entry-title"><a href="#news">Winter opening hours</a></h3><p class="entry-meta">Posted on <time datetime="2026-11-12">12 November 2026</time> by Crumb &amp; Co.</p><p>From December we open one hour later on weekdays. Weekend hours stay the same&hellip;</p></article>
+			</div>
+		</section>
+
+		<section class="entry" aria-labelledby="how-title">
+			<h2 id="how-title" class="entry-title">How this page maps to the theme</h2>
+			<p>The live theme is PHP, so this static page shows the same markup and stylesheet. In WordPress the header comes from <code>header.php</code>, the post cards from the loop in <code>index.php</code>, and the footer widgets from <code>footer.php</code>.</p>
+<pre class="code-note" tabindex="0" aria-label="Example of the WordPress loop">&lt;?php while ( have_posts() ) : the_post(); ?&gt;
+  &lt;article &lt;?php post_class( 'entry' ); ?&gt;&gt;
+    &lt;h2 class="entry-title"&gt;&lt;a href="&lt;?php the_permalink(); ?&gt;"&gt;&lt;?php the_title(); ?&gt;&lt;/a&gt;&lt;/h2&gt;
+    &lt;?php the_excerpt(); ?&gt;
+  &lt;/article&gt;
+&lt;?php endwhile; ?&gt;</pre>
+			<p><a href="/wordpress-theme/crumb.zip" download>Download crumb.zip</a> and upload it under Appearance &rarr; Themes &rarr; Add New.</p>
+		</section>
+	</div>
+</main>
+
+<footer class="site-footer" id="visit">
+	<div class="container">
+		<div class="footer-widgets">
+			<section class="widget"><h2 class="widget-title">Opening hours</h2><p>Mon&ndash;Fri 7:00&ndash;19:00<br>Sat&ndash;Sun 8:00&ndash;14:00</p></section>
+			<section class="widget"><h2 class="widget-title">Visit us</h2><p>Strada Exemplu 1 (fictional address)</p></section>
+			<section class="widget"><h2 class="widget-title">About</h2><p>Crumb &amp; Co. is a fictional business made for a portfolio demo.</p></section>
+		</div>
+		<p>&copy; 2026 Crumb &amp; Co. &middot; Crumb theme by David Constantin</p>
+	</div>
+</footer>
+<script>
+(function(){var n=document.getElementById('site-navigation');if(!n)return;var b=n.querySelector('.menu-toggle');b.addEventListener('click',function(){var o=n.classList.toggle('toggled');b.setAttribute('aria-expanded',o?'true':'false');});})();
+</script>
+</body>
+</html>
