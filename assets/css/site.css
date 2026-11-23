@@ -213,3 +213,12 @@ code,pre{font-family:var(--mono);font-size:.9rem}
 }
 @media print{.nav,.hero::before,.hero::after,.theme-toggle{display:none}body{background:#fff;color:#000}}
 [data-theme="light"] .btn-accent,[data-theme="light"] .logo-mark,[data-theme="light"] .avatar{color:#fff}
+/* grouped skills */
+.skills-grouped{grid-template-columns:repeat(2,1fr)}
+@media (max-width:700px){.skills-grouped{grid-template-columns:1fr}}
+.skill-group{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.2rem 1.3rem}
+.skill-group h3{font-size:1.1rem;margin-bottom:.7rem}
+.skill-group ul{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
+.skill-group li b{font-size:1rem}
+.skill-group .d{display:block;color:var(--muted);font-size:.93rem}
+.skill-group .lvl{display:inline-block;margin-left:.4rem;padding:.05rem .55rem;border-radius:99px;border:1px solid var(--line);font-size:.75rem;color:var(--muted)}
